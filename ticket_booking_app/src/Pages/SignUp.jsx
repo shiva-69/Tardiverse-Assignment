@@ -9,6 +9,9 @@ import {
   Button,
 } from "@chakra-ui/react";
 import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import { setUser } from "../Redux/User/Action";
+import { setAllUser } from "../Redux/AllUsers/Action"
 
 export const SignUp = () => {
   const [name, setName] = React.useState("");
@@ -16,12 +19,18 @@ export const SignUp = () => {
   const [password, setPassword] = React.useState("");
   const [users, setUsers] = React.useState([]);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+
   const fetchUsers = () => {
     fetch("http://localhost:8080/users")
       .then((res) => res.json())
       .then((res) => {
         setUsers(res);
-      });
+        console.log(res)
+        dispatch(setAllUser(res));
+      })
+      .catch((err) => console.log(err));
   };
   React.useEffect(() => {
     fetchUsers();
@@ -50,8 +59,8 @@ export const SignUp = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log("User Created");
         fetchUsers();
+        dispatch(setUser(res));
         navigate("/login")
       })
       .catch((err) => console.log(err));
