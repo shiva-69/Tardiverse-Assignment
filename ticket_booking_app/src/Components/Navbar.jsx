@@ -8,8 +8,11 @@ import {
   Button,
 } from "@chakra-ui/react";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 export const Navbar = () => {
+  const {authStatus} = useSelector(state => state.auth);
+  const {user} = useSelector(state => state.user);
   return (
     <>
       <Box p="2" pr ="15%" pl="15%">
@@ -18,11 +21,14 @@ export const Navbar = () => {
             <Heading fontSize={32}>Flight Booking App</Heading>
           </Box>
           <Spacer />
-          <ButtonGroup gap="2">
-            <Button ><Link to={"/signUp"}>Sign Up</Link></Button>
-            <Button ><Link to={"/login"}>Login</Link></Button>
-            <Button>Help?</Button>
-          </ButtonGroup>
+          {
+            authStatus ? <Box>Welcome, {`${user.name}`}</Box>
+          : <><ButtonGroup gap="2">
+          <Button ><Link to={"/signUp"}>Sign Up</Link></Button>
+          <Button ><Link to={"/login"}>Login</Link></Button>
+          <Button>Help?</Button>
+        </ButtonGroup></>
+          }
         </Flex>
       </Box>
     </>

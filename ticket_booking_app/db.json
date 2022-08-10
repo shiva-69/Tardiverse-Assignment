@@ -7,10 +7,16 @@
       "id": 1
     },
     {
-      "name": "ds",
-      "email": "ds",
-      "password": "ds",
+      "name": "Rakesh",
+      "email": "rakesh@gmail.com",
+      "password": "Passowrd",
       "id": 2
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "id": 3
     }
   ]
 }
