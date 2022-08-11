@@ -11,7 +11,7 @@ export const SearchResults = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     React.useEffect(() => {
-        fetch("http://localhost:8080/flights")
+        fetch("https://jsonserverlive.herokuapp.com/flights")
             .then((res) => res.json())
             .then((res) => {
                 setData(res)

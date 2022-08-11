@@ -15,7 +15,7 @@ export const Checkout = () => {
     
     const toast = useToast()
     React.useEffect(() => {
-        fetch(`http://localhost:8080/flights/${id}`)
+        fetch(`https://jsonserverlive.herokuapp.com/flights/${id}`)
             .then((res) => res.json())
             .then((res) => {
                 setImg(res.logo)

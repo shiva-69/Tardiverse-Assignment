@@ -6,7 +6,8 @@ import {
   Button,
   Select,
   Flex,
-  Img
+  Img,
+  Heading
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { query } from "../Redux/Query/Action";
@@ -28,7 +29,8 @@ export const Home = () => {
         navigate("/results")
     }
   return (
-    <Box ml="15%" mr="15%" mt="2%" border="2px solid black" pl ="3%" pt ="10%">
+    <Box ml="15%" mr="15%" mt="2%" boxShadow='md' pl ="3%" >
+      <Heading align="center" mt="2%" mb="5%" fontWeight="400">Find your Flights here</Heading>
       <Select
         placeholder="From"
         width="15rem"  
@@ -95,7 +97,7 @@ export const Home = () => {
             Find Flights
          </Button>
       </Flex>
-      <Flex justify="center" mt="2%"><Img src="https://mmt.servedbyadbutler.com/getad.img/;libID=3438794" pr="6%"/></Flex>
+      <Flex justify="center" mt="8%"><Img src="https://mmt.servedbyadbutler.com/getad.img/;libID=3438794" pr="6%"/></Flex>
     </Box>
   );
 };

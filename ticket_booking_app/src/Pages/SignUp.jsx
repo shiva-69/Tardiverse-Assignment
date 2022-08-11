@@ -24,7 +24,7 @@ export const SignUp = () => {
 
 
   const fetchUsers = () => {
-    fetch("http://localhost:8080/users")
+    fetch("https://jsonserverlive.herokuapp.com/users")
       .then((res) => res.json())
       .then((res) => {
         setUsers(res);
@@ -51,7 +51,7 @@ export const SignUp = () => {
     return found ? true : false;
   };
   const createUser = async (payload) => {
-    fetch("http://localhost:8080/users", {
+    fetch("https://jsonserverlive.herokuapp.com/users", {
       method: "POST",
       body: JSON.stringify(payload),
       headers: {
@@ -72,7 +72,7 @@ export const SignUp = () => {
       email,
       password,
     };
-    fetch("http://localhost:8080/users")
+    fetch("https://jsonserverlive.herokuapp.com/users")
       .then((res) => res.json())
       .then((res) => {
         setUsers(res);

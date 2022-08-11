@@ -1,29 +1,5 @@
 {
   "users": [
-    {
-      "name": "Robert ",
-      "email": "Bruce1",
-      "password": "32",
-      "id": 1
-    },
-    {
-      "name": "Rakesh",
-      "email": "rakesh@gmail.com",
-      "password": "Passowrd",
-      "id": 2
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": 3
-    },
-    {
-      "name": "shivam",
-      "email": "shivam",
-      "password": "shivam",
-      "id": 4
-    }
   ],
   "flights": [
     {

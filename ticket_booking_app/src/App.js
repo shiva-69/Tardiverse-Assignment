@@ -7,11 +7,13 @@ import {setAllUser} from "../src/Redux/AllUsers/Action"
 import { Home } from "./Pages/Home";
 import {SearchResults} from "./Pages/SearchResults"
 import { Checkout } from "./Pages/Checkout";
+import {useSelector} from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
+  const {authStatus} = useSelector(store => store.auth);
   const fetchUsers = () => {
-    fetch("http://localhost:8080/users")
+    fetch("https://jsonserverlive.herokuapp.com/users")
       .then((res) => res.json())
       .then((res) => {
         dispatch(setAllUser(res));
@@ -26,8 +28,8 @@ function App() {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/signup" element ={<SignUp/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
-        <Route path="/results" element={<SearchResults/>}></Route>
-        <Route path="/checkout" element={<Checkout/>}></Route>
+        <Route path="/results" element={authStatus ? <SearchResults/> : <Login/>}></Route>
+        <Route path="/checkout" element={authStatus ? <Checkout/> : <Login/>}></Route>
       </Routes>
     </div>
   );
