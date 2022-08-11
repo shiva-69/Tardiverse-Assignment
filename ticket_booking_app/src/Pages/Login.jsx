@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toggleAuth } from "../Redux/Auth/Action";
 import { setUser } from "../Redux/User/Action";
+import { useToast } from "@chakra-ui/react";
 
 
 
@@ -11,12 +12,15 @@ import { setUser } from "../Redux/User/Action";
 export const Login = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [isValidPass, setInvalidPass] = React.useState(false);
   const { allUser } = useSelector(state => state.AllUser);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const toast = useToast();
   
 
   const handleSubmit = () => {
+    let passStatus = password.length < 4 ? setInvalidPass(true) : "";
     let res = (allUser.find(item => item.email == email && item.password == password))
     let status =  res ? true : false;  
     return status ? (dispatch(toggleAuth(true))) && dispatch(setUser(res)) && navigate("/") : "";
@@ -41,6 +45,16 @@ export const Login = () => {
         <Input type="password" width="20rem" mb="20px" id="password" placeholder="Enter your Password" onChange={handlePassword} />
         <Box pl="100px" mt="20px"><Button colorScheme="blue" width="120px" onClick={handleSubmit}>Login</Button></Box>
       </FormControl>
+      {
+            isValidPass ? toast({
+                title: 'Error in Password!',
+                description: "Your need to enter password of length more than 4",
+                position: 'top',
+                status: 'error',
+                duration: 4000,
+                isClosable: true,
+            }) : <></>
+          }
     </Box>
   );
 }

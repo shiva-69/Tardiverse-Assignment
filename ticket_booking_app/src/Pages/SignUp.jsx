@@ -10,16 +10,19 @@ import {
 } from "@chakra-ui/react";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-
+import { useToast } from "@chakra-ui/react";
 import { setAllUser } from "../Redux/AllUsers/Action";
 
 export const SignUp = () => {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [isValidPass, setInvalidPass] = React.useState(false);
+  const [alreadyPresent, setAlreadyPresent] = React.useState(false);
   const [users, setUsers] = React.useState([]);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const toast = useToast();
 
 
 
@@ -48,6 +51,7 @@ export const SignUp = () => {
   };
   const checkIfAlreadyPresent = (email) => {
     let found = users.find((item) => item.email === email);
+    let foundalready = found ? setAlreadyPresent(true) : "";
     return found ? true : false;
   };
   const createUser = async (payload) => {
@@ -76,6 +80,7 @@ export const SignUp = () => {
       .then((res) => res.json())
       .then((res) => {
         setUsers(res);
+        let passStatus = password.length < 4 ? setInvalidPass(true) : "";
         let resp = checkIfAlreadyPresent(email);
         return resp ? (<div>Already present</div>) : createUser(payload);
       });
@@ -130,6 +135,23 @@ export const SignUp = () => {
           </Button>
         </Box>
       </FormControl>
+      {
+            isValidPass ? toast({
+                title: 'Error in Password!',
+                description: "Your need to enter password of length more than 4",
+                position: 'top',
+                status: 'error',
+                duration: 4000,
+                isClosable: true,
+            }) : alreadyPresent ? toast({
+              title: 'This user is already registered',
+              description: "Try loggin in instead",
+              position: 'top',
+              status: 'error',
+              duration: 4000,
+              isClosable: true,
+          }) : ""
+          }
     </Box>
   );
 };
