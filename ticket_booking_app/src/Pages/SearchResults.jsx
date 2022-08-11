@@ -30,13 +30,10 @@ export const SearchResults = () => {
         navigate("/checkout")
     }   
     const {query} = useSelector(state => state.query)
-    let arrYear =  query.arrival.split("-")[0];
-    let arrMonth = query.arrival.split("-")[1];
-    let arrDay = query.arrival.split("-")[2];
     let departYear = query.depart.split("-")[0]
     let departMonth = query.depart.split("-")[1]
     let departDay = query.depart.split("-")[2];
-    let totalDiff = Math.floor(Math.abs((arrYear - departYear) * 1000)) + Math.floor(Math.abs((arrMonth - departMonth) * 80)) + Math.floor(Math.abs((arrDay - departDay) * 21));
+    let totalDiff = Math.floor(Math.abs((2022 - departYear) * 1000)) + Math.floor(Math.abs((8 - departMonth) * 80)) + Math.floor(Math.abs((12- departDay) * 21));
     const basePrice = 9000;
     return <div>{   
         isLoading ? <Spinner
