@@ -17,6 +17,41 @@
       "email": "",
       "password": "",
       "id": 3
+    },
+    {
+      "name": "shivam",
+      "email": "shivam",
+      "password": "shivam",
+      "id": 4
+    }
+  ],
+  "flights": [
+    {
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=11"
+    },
+    {
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=11"
+    },
+    {
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=11"
+    },
+    {
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=11"
+    },
+    {
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=11"
+    },
+    {
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=11"
+    },
+    {
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/AI.png?v=11"
+    },
+    {
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=11"
+    },
+    {
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=11"
     }
   ]
 }

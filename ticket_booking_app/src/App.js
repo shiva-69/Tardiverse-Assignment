@@ -5,6 +5,7 @@ import {Login} from "./Pages/Login";
 import {useDispatch} from "react-redux";
 import {setAllUser} from "../src/Redux/AllUsers/Action"
 import { Home } from "./Pages/Home";
+import {SearchResults} from "./Pages/SearchResults"
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Home/>}></Route>
         <Route path="/signup" element ={<SignUp/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
+        <Route path="/results" element={<SearchResults/>}></Route>
       </Routes>
     </div>
   );
