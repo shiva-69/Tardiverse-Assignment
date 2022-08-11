@@ -74,6 +74,7 @@ export const Home = () => {
         placeholder="Enter departure Date"
         id="depart"
         name="depart"
+        min="2022-08-11"
         isRequired={true}
         onChange={handleChange}
       />
@@ -84,6 +85,7 @@ export const Home = () => {
         placeholder="Enter arrival Date"
         id="arrival"
         name="arrival"
+        min="2022-08-11"
         onChange={handleChange}
       />
 

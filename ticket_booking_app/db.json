@@ -27,31 +27,40 @@
   ],
   "flights": [
     {
-      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=11"
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=11",
+      "id": 1
     },
     {
-      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=11"
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=11",
+      "id": 2
     },
     {
-      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=11"
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=11",
+      "id": 3
     },
     {
-      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=11"
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=11",
+      "id": 4
     },
     {
-      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=11"
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/6E.png?v=11",
+      "id": 5
     },
     {
-      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=11"
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/I5.png?v=11",
+      "id": 6
     },
     {
-      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/AI.png?v=11"
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/AI.png?v=11",
+      "id": 7
     },
     {
-      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=11"
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=11",
+      "id": 8
     },
     {
-      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=11"
+      "logo" : "https://imgak.mmtcdn.com/flights/assets/media/dt/common/icons/SG.png?v=11",
+      "id": 9
     }
   ]
 }

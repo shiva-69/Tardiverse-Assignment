@@ -6,6 +6,7 @@ import {useDispatch} from "react-redux";
 import {setAllUser} from "../src/Redux/AllUsers/Action"
 import { Home } from "./Pages/Home";
 import {SearchResults} from "./Pages/SearchResults"
+import { Checkout } from "./Pages/Checkout";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +27,7 @@ function App() {
         <Route path="/signup" element ={<SignUp/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/results" element={<SearchResults/>}></Route>
+        <Route path="/checkout" element={<Checkout/>}></Route>
       </Routes>
     </div>
   );
